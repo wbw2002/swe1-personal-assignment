@@ -1,5 +1,7 @@
 language: python
 python:
+  - "3.8"
+  - "3.9"
   - "3.11"  # or your project's Python version
 services:
   - postgresql  # or any database your project uses
