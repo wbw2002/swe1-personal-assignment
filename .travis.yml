@@ -2,24 +2,16 @@ language: python
 python:
   - "3.8"
   - "3.9"
-  - "3.11"  # or your project's Python version
-services:
-  - postgresql  # or any database your project uses
-addons:
-  postgresql: "12"
-before_script:
-  - psql -c 'create database myapp;' -U postgres
-  - python manage.py migrate  # adjust according to your database setup
+  - "3.11" 
 install:
   - pip install -r requirements.txt
   - pip install flake8 black coverage coveralls
 script:
-  - black --check .  # Check code formatting
-  - flake8 .  # Linting
-  - coverage run manage.py test  # Run tests
+  - black --check .
+  - flake8 . 
+  - coverage run manage.py test  
 after_success:
-  - coveralls  # Report coverage
-before_deploy: "echo 'ready?'"
+  - coveralls 
 deploy:
   provider: elasticbeanstalk
   region: "us-west-2"
