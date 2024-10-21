@@ -1,4 +1,7 @@
 Django
 pytz
 sqlparse
-pyYaml
+flake8
+coveralls
+coverage
+black
